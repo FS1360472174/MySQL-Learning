@@ -1,0 +1,28 @@
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface SqlSession
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+SqlSession <|-- DefaultSqlSession
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+interface  SQLSession {
+<T> T selectOne(String var1);
+}
+@enduml

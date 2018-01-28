@@ -1,0 +1,10 @@
+@startuml
+SqlSession -> Executor: API访问层
+Executor -> StatementHandler: 构建SQL,缓存结果
+StatementHandler -> Statement: 与JDBC Statement交互
+Statement -> StatementHandler: resultset
+
+SqlSession -> Executor: close session
+
+
+@enduml
